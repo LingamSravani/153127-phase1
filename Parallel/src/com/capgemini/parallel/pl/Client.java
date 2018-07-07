@@ -80,6 +80,7 @@ public class Client {
 				BigDecimal amt = sc.nextBigDecimal();
 				Customer c2 = service.fundTransfer(mob1, mob2, amt);
 				System.out.println(c2);
+			        break;
 			}
 			System.out.println("for continue-yes/no");
 			choice = sc.next();
