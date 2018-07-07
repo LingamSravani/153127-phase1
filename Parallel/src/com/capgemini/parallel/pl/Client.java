@@ -31,7 +31,6 @@ public class Client {
 			System.out.println("3.withdraw: ");
 			System.out.println("4.Deposit:  ");
 			System.out.println("5.Fund Transfer:   ");
-			System.out.println("6.Transactions:    ");
 			System.out.println("enter num:  ");
 			num = sc.nextInt();
 			switch (num) {
@@ -74,13 +73,16 @@ public class Client {
 			case 5:
 				System.out.println("enter source moblileno:   ");
 				String mob1 = sc.next();
-				System.out.println("enter traget mobileno:   ");
+				System.out.println("enter target mobileno:   ");
 				String mob2 = sc.next();
 				System.out.println("enter amount :   ");
 				BigDecimal amt = sc.nextBigDecimal();
 				Customer c2 = service.fundTransfer(mob1, mob2, amt);
 				System.out.println(c2);
 			        break;
+			default:
+				System.out.println("invalid choice");
+				break;
 			}
 			System.out.println("for continue-yes/no");
 			choice = sc.next();
