@@ -85,9 +85,11 @@ public class WalletServiceImpl implements WalletService {
 		BigDecimal bal = customer.getWallet().getBalance().add(amount);
 		Wallet wallet = new Wallet(bal);
 		customer.setWallet(wallet);
-
+                if(repo.save(customer)){
 		return customer;
-
+        }       else{
+	        return null;
+        }
 	
 	}
 
@@ -96,8 +98,9 @@ public class WalletServiceImpl implements WalletService {
 		BigDecimal bal = customer.getWallet().getBalance().subtract(amount);
 		Wallet wallet = new Wallet(bal);
 		customer.setWallet(wallet);
-
+                if(repo.save(customer)){
 		return customer;
 
-	}
-}
+	}       else{
+	        return null;
+}}}
